@@ -1,11 +1,12 @@
 import discord
-import responses
+import DiscordBot.responses as responses
 
-# send embed to either user or channel
+# Function to send embedded message to dm or channel
 async def send_embed(message, user_message, is_private):
     try:
         if user_message == 'help':
             is_private = True
+        
         embed = responses.get_response(user_message)
         # if help is requested, dm it to user requesting, else send in main channel
         await message.author.send(embed=embed) if is_private else await message.channel.send(embed=embed)

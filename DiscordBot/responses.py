@@ -1,5 +1,5 @@
 from discord import Embed
-from prompts import *
+from pytrending import *
 import datetime
 
 # create error embed in case of mistakes
